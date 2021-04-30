@@ -195,7 +195,7 @@ class LinearRegressionTraining:
     def compute_cost(self) -> float:
         m = self.training_set.shape[0]
         return (1 / (2 * m)) * sum([
-            (self.theta0 + self.theta1 * row['km'] - row['price']) ** 2
+            (self.theta0 + self.theta1 * row['x'] - row['y']) ** 2
             for _, row in self.training_set.iterrows()
         ])
 
